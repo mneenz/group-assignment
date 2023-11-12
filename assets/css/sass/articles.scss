@@ -50,6 +50,10 @@ article#article {
     }
   } /*Close .article-0*/
 
+  &.article-1 {
+    width: 32%;
+  }
+
   /*Styling of smallest articles in 'sidebar'*/
   &.article-2,
   &.article-3,

@@ -3,18 +3,25 @@ Name: Google News SASS
 Version: 1.0
 */
 
-@import "colors.scss"; /*Colors SASS file*/ 
+@import "colors.scss"; /*Colors SASS file*/
 @import "mixin.scss"; /*Mixin SASS file*/
 @import "fonts.scss"; /*Fonts SASS file*/
 @import "header.scss"; /*Header SASS file*/
 @import "articles.scss"; /*Articles SASS file*/
 
-body {
+html {
   width: 100%;
+  margin:0;
+  border-top: 2px solid $link-hover;
+}
+
+body {
+  width: 90%;
   overflow-x: hidden;
   display: block;
   clear: both;
-  padding: 1%;
+  padding: 0;
+  margin:0px auto;
   box-sizing: border-box;
 	font-family:$primary-font;
 	font-size:13pt;
@@ -44,12 +51,10 @@ body {
 }
 
 #content {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-
-  @media (max-width : 870px) {
-    width: 100%;
-  }
+  display: block;
+  overflow: hidden;
 }
 
 /*------FOOTER-----*/

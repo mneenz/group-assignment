@@ -77,7 +77,7 @@ Version: 1.0
 /*Mixin SASS file*/
 /*! TYPOGRAPHY  */
 /* --- Convert percent font sizes to em ---*/
-html, .paragraph, li, p {
+html, .paragraph, #header nav#menu ul li.search input#searchInput, li, p {
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
   margin-top: 10px;
@@ -87,7 +87,7 @@ html, .paragraph, li, p {
   line-height: 1.25rem;
   color: black;
 }
-html strong, html b, .paragraph strong, li strong, .paragraph b, li b, p strong, p b {
+html strong, html b, .paragraph strong, #header nav#menu ul li.search input#searchInput strong, li strong, .paragraph b, #header nav#menu ul li.search input#searchInput b, li b, p strong, p b {
   font-weight: bold;
 }
 
@@ -148,13 +148,11 @@ a:hover, a:active, a:visited {
 /*Fonts SASS file*/
 /*! HEADER STYLES */
 #header {
-  width: 110%;
+  width: 100%;
   height: 130px;
   overflow: hidden;
   background: white;
   display: block;
-  margin-left: -5%;
-  padding-top: 10px;
   /*Breakpoint for when menu can't fit the screen anymore*/
   /*#header h1*/
   /*Close nav#menu*/
@@ -167,23 +165,40 @@ a:hover, a:active, a:visited {
     position: relative;
   }
 }
+#header #branding {
+  padding: 1%;
+  box-sizing: border-box;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  /*Breakpoint for when menu can't fit the screen anymore*/
+  /*#bradning img*/
+}
+@media screen and (max-width: 1190px) {
+  #header #branding {
+    height: auto;
+    width: 20%;
+    max-width: 90px;
+  }
+  #header #branding img {
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+#header #branding img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
 #header h1 {
   vertical-align: middle;
   display: inline-block;
-  padding: 0 5%;
-  font-size: 35px;
-  font-size: 2.1875rem;
-  line-height: 40px;
-  line-height: 2.5rem;
-  margin-bottom: 5px;
 }
 #header nav#menu {
   display: block;
-  width: 90%;
+  width: 100%;
   border-bottom: 1px solid #CCC;
   border-top: 1px solid #CCC;
-  padding-left: 5%;
-  padding-right: 5%;
   /*Breakpoint for when menu can't fit the screen anymore*/
   /*Close @media screen and (max-width: 1190px)*/
   /*Close ul*/
@@ -219,15 +234,6 @@ a:hover, a:active, a:visited {
     text-align: left;
     padding: 1% 0;
     border-top: 1px solid #CCC;
-    margin: 0;
-    margin-left: -5%;
-    padding-left: 5%;
-  }
-  #header nav#menu.responsive li:first-child {
-    border-top: 0;
-  }
-  #header nav#menu.responsive li a.current {
-    padding-bottom: 6px;
   }
 }
 #header nav#menu ul {
@@ -237,43 +243,31 @@ a:hover, a:active, a:visited {
 #header nav#menu ul li {
   display: inline-block;
   vertical-align: middle;
+  text-transform: uppercase;
   font-weight: bold;
   margin: 0 1%;
   font-family: "Playfair Display", serif;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 25px;
-  line-height: 1.5625rem;
   /*Breakpoint for when menu can't fit the screen anymore*/
   /*@media screen and (max-width: 1190px)*/
 }
-#header nav#menu ul li:first-child {
-  margin-left: 0;
-}
 #header nav#menu ul li a.current {
   color: #16315e;
-  border-bottom: 3px solid #16315e;
-  padding-bottom: 16px;
+  border-bottom: 2px solid #16315e;
 }
 #header nav#menu ul li.icon {
   display: none;
 }
 #header nav#menu ul li.search input#searchInput {
   background-image: url("../searchicon.png");
-  background-position: 7px 10px;
+  background-position: 4px 7px;
   background-repeat: no-repeat;
-  width: 160px;
+  width: 113px;
   background-size: 15px auto;
   box-sizing: border-box;
-  padding: 5px 5px 5px 30px;
+  padding: 5px 5px 5px 22px;
   border: 1px solid #CCC;
-  margin: 12px 0;
+  margin-bottom: 12px;
   box-shadow: 0 0 0 transparent;
-  font-family: "Playfair Display", serif;
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 25px;
-  line-height: 1.5625rem;
 }
 #header nav#menu ul li.search input#searchInput:focus {
   box-shadow: 0 0 5px #2a5db0;
@@ -288,16 +282,11 @@ a:hover, a:active, a:visited {
     float: right;
     display: inline-block !important;
     position: absolute;
-    right: 5%;
+    right: 2%;
     top: 30px;
   }
   #header nav#menu ul li.icon a {
     font-size: 20px;
-  }
-}
-@media (max-width: 870px) {
-  #header nav#menu ul li.icon {
-    top: 15px;
   }
 }
 
@@ -356,9 +345,6 @@ article#article.article-0 img {
   article#article.article-0 img {
     max-height: 200px !important;
   }
-}
-article#article.article-1 {
-  width: 32%;
 }
 article#article.article-2, article#article.article-3, article#article.article-4 {
   border-top: 1px solid #CCC;
@@ -509,8 +495,7 @@ body {
   overflow-x: hidden;
   display: block;
   clear: both;
-  padding: 0;
-  margin: 0px auto;
+  padding: 1%;
   box-sizing: border-box;
   font-family: "Playfair Display", serif;
   font-size: 13pt;
@@ -535,10 +520,13 @@ body {
   }
 }
 #content {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
-  display: block;
-  overflow: hidden;
+}
+@media (max-width: 870px) {
+  #content {
+    width: 100%;
+  }
 }
 
 /*------FOOTER-----*/
@@ -546,4 +534,4 @@ body {
   width: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.cs.map */

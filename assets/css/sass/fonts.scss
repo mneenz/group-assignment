@@ -1,7 +1,7 @@
 /*! TYPOGRAPHY  */
 
 $primary-font:       'Playfair Display', serif;
-$secondary-font:      'Open Sans', sans-serif;
+$secondary-font:     'Open Sans', sans-serif;
 
 /* --- Convert percent font sizes to em ---*/
 @mixin font-size($sizeValue: 12 ) {
